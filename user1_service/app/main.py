@@ -16,7 +16,7 @@ from app.router import user
 
 async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     logging.info("Lifespan event started...")
-    # asyncio.create_task(consume_messages('products', 'broker:19092'))
+   
   
     create_tables()
 
