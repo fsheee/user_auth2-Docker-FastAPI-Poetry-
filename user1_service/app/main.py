@@ -80,13 +80,6 @@ def refresh_token(old_refresh_token:str,
 
     return Token(access_token=access_token, token_type= "bearer", refresh_token=refresh_token)
 
-# Get User Profile
-@app.get('/profile', response_model=UserResponse)
-async def get_profile(current_user: Annotated[User, Depends(current_user)], session: Annotated[Session, Depends(get_session)]):
-    user = session.get(User, current_user.id)
-    if not user:
-        raise HTTPException(status_code=404, detail="User not found")
-    return user
 
 
 
