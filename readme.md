@@ -3,5 +3,5 @@
 
  https://fastapi.tiangolo.com/tutorial/security/oauth2-jwt/
 
-astapi.tiangolo.com/tutorial/security/oauth2-jwt/#install-pyjwt 
+https://fastapi.tiangolo.com/tutorial/security/oauth2-jwt/#install-pyjwt 
  
