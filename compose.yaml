@@ -1,0 +1,34 @@
+version: '3.8'
+name: user service
+services:
+  user1_service:
+    build:
+      context: ./user1_service
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./user1_service:/code  # Sync local development directory with the container
+    depends_on:
+        - user1_db
+        
+    ports:
+      - "8006:8000"  # Expos
+  user1_db:
+    image: postgres:latest  # Use the official PostgreSQL image
+    restart: always
+    container_name: UserContainer
+    environment:
+        - POSTGRES_USER=afsheen
+        - POSTGRES_PASSWORD=abc
+        - POSTGRES_DB=userdb
+    ports:
+        - '5445:5432'
+    volumes:
+      - user1_db:/var/lib/postgresql/data
+  
+  volumes:
+    user1_db:
+    driver: local  
+      
+networks:
+  default:
+    driver: bridge
