@@ -10,9 +10,9 @@ from jose import jwt, JWTError
 from datetime import datetime, timezone, timedelta
 
 
-SECRET_KEY = 'cd0d7bc66d15585dd305b6b55e7cf7b473efa236825c8f00c1340d2015c44a81'
+SECRET_KEY = 'UR-SECRET-KEY'
 ALGORITHYM = 'HS256'
-EXPIRY_TIME = 1
+EXPIRY_TIME = 15
 
 oauth_scheme = OAuth2PasswordBearer(tokenUrl="/token")
 
